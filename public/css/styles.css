@@ -46,20 +46,24 @@ h2 {
 /* Cards */
 
 .container .card-title {
-    color: rgb(27, 25, 25);
+    color: rgba(255, 255, 255, 0.874);
 }
 
 .card-body {
-    background-color: rgba(29, 24, 24, 0.33);
-
+    background-color: rgba(7, 6, 6, 0.897);
 }
 
 
 #card {
     display: inline-block;
-    margin-right: 30px;
+    margin-left: 35px;
     margin-bottom: 70px;
+    margin-top: 20px;
 }
+
+
+
+
 
 
 /* Carrosel */
@@ -77,8 +81,17 @@ h2 {
 
 /* Show */
 
+
 #tela-filme {
-    display:flex;
+    display: flex;
+}
+
+#tela-filme a{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #paginafilme {
@@ -87,8 +100,23 @@ h2 {
 }
 
 #conteudo-filme {
+
     color: #FFF;
-    margin-top: 40px;
+    margin-top: 150px;
     margin-left: 60px;
 }
+
+
+
+/* Footer */
+
+footer {
+    margin-bottom: 20px;
+    color: #FFF;
+    border-top: 1px solid #fff;
+    padding-top: 15px;
+}
+
+
+/* Tela Usuarios */
 

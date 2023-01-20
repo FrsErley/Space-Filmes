@@ -5,10 +5,7 @@
 @section('content')
    
 
-
-
-<body>
-<div id="carrosel-controles" class=" container carousel slide" data-ride="carousel">
+<div id="carrosel-controles" class="container carousel slide" data-ride="carousel">
 
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -27,79 +24,93 @@
     </a>
 
 </div>
+
+@auth
+<div class="container">
     
+    <h2>Minha lista</h2>
+    
+        
+    <div id="card" class="card" style="width: 180px;">
+         <a href="/movie"><img class="card-img-top" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
+       
+    </div>
+    
+
+
+
+    <div id="card" class="card" style="width: 180px;">
+        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
+        
+    </div>
+
+    <div id="card" class="card" style="width: 180px;">
+        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
+        
+    </div>
+
+    <div id="card" class="card" style="width: 180px;">
+        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
+        
+    </div>
+
+    <div id="card" class="card" style="width: 180px;">
+        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
+    </div>
+
+   
+      
+    
+
+    
+
+       
+</div>
+@endauth  
 
 <div class="container">
 
-    <h2>Filmes</h2>
+    <h2>Filmes Disponíveis</h2>
+    
     <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/gatodebotas.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Gato de botas 2</h5> </a>
-        </div>
+        <a href="/movie"><img class="card-img-top" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
+    </div>
+    
+
+    <div id="card" class="card" style="width: 180px;">
+        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
 
     <div id="card" class="card" style="width: 180px;">
         <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <a href="" style="text-decoration: none"> <h5 class="card-title">Avatar 2</h5> </a>
-        </div>
     </div>
     
       
