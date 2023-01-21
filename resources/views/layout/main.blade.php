@@ -20,10 +20,10 @@
     <header class="bg-dark">
         <nav class="navbar bg-dark navbar-expand-lg navbar-dark container">
 
-            <a href="" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <ion-icon class="d-inline-block align-top" name="film-outline"></ion-icon>
             </a>
-            <span id="title" class="navbar-brand mb-0 h1">Space Filmes</span>
+            <a id="title" href="/"><span class="navbar-brand mb-0 h1">Space Filmes</span></a>
 
             <div class="collapse navbar-collapse" id="navbar">
                 <form class="form-inline mt-2 mt-md-0">

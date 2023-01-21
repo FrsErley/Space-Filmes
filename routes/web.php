@@ -17,7 +17,7 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/movie', [EventController::class, 'pagemovie']);
-Route::get('/telafilme', [EventController::class, 'telafilme']);
+Route::get('/telafilme', [EventController::class, 'telafilme'])->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',
