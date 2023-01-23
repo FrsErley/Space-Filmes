@@ -26,100 +26,45 @@
 </div>
 
 @auth
+
 <div class="container">
-    
+
     <h2>Minha lista</h2>
+
     
-        
-    <div id="card" class="card" style="width: 180px;">
-         <a href="/movie"><img class="card-img-top" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
-       
-    </div>
+    <div class="container">
+
+        @for( $i = 0; $i < count($arr); $i++)
+    {{ $arr[$i] }}
     
-
-
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-        
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
+    <a href="/movie"><img id="image-movie" src="img/3197518.jpg" alt="Imagem de capa do card"></a>
+    
+    @endfor
    
-      
     
-
-    
-
-       
 </div>
+
+</div>
+
 @endauth  
 
 <div class="container">
 
-    <h2>Filmes Disponíveis</h2>
+    <h2>Minha lista</h2>
+
+    <div class="container">
+
+    @for( $i = 0; $i < count($arr); $i++)
+    {{ $arr[$i] }}
     
-    <div id="card" class="card" style="width: 180px;">
-        <a href="/movie"><img class="card-img-top" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
-    </div>
+    <a href="/movie"><img id="image-movie" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
+
+    @endfor
     
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-
-    <div id="card" class="card" style="width: 180px;">
-        <img class="card-img-top" src="img/3197518.jpg" alt="Imagem de capa do card">
-    </div>
-    
-      
-    
-
-    
-
-       
 </div>
+
+</div>
+
 
 
 

@@ -47,24 +47,14 @@ h2 {
 
 /* Cards */
 
-.container .card-title {
-    color: rgba(255, 255, 255, 0.874);
+#image-movie {
+    
+    border-radius: 15px;
+    width: 180px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    
 }
-
-.card-body {
-    background-color: rgba(7, 6, 6, 0.897);
-}
-
-
-#card {
-    display: inline-block;
-    margin-left: 35px;
-    margin-bottom: 70px;
-    margin-top: 20px;
-}
-
-
-
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Facades\ApiMovies;
 
 
 
@@ -11,7 +12,15 @@ class EventController extends Controller
     
     public function index() {
 
-        return view('welcome');
+        $arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        $filme = url('public/img/3197518.jpg');
+
+        return view('welcome',[
+            'arr' => $arr,
+            'filme' => $filme
+
+        ]);
     }
 
     public function pagemovie() {
