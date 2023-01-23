@@ -113,6 +113,18 @@ h2 {
     margin-left: 50px;
 }
 
+/* Tela de usuario */
+
+#userarea h1 {
+    color: white;
+    border-bottom: 1px solid white;
+
+}
+
+#userarea {
+    margin-bottom: 100px;
+}
+
 
 
 /* Footer */
