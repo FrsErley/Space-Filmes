@@ -34,14 +34,10 @@
     
     <div class="container">
 
-        @for( $i = 0; $i < count($arr); $i++)
-    {{ $arr[$i] }}
     
     <a href="/movie"><img id="image-movie" src="img/3197518.jpg" alt="Imagem de capa do card"></a>
     
-    @endfor
    
-    
 </div>
 
 </div>
@@ -50,16 +46,15 @@
 
 <div class="container">
 
-    <h2>Minha lista</h2>
+    <h2>Filmes Populares</h2>
 
     <div class="container">
 
-    @for( $i = 0; $i < count($arr); $i++)
-    {{ $arr[$i] }}
+    @foreach($filmes as $filme)
     
-    <a href="/movie"><img id="image-movie" src="img/gatodebotas.jpg" alt="Imagem de capa do card"></a>
+    <a href="/movie"><img id="image-movie" src="img/{{ $filme->poster }}" alt="Imagem de capa do card"></a>
 
-    @endfor
+    @endforeach
     
 </div>
 

@@ -16,7 +16,7 @@ use App\Http\Controllers\EventController;
 
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/movies/{movie}', [EventController::class, 'pagemovie']);
+Route::get('/movie/{id}', [EventController::class, 'pagemovie']);
 
 
 Route::get('/movies/{movie}', 'MoviesController@index')->name('movies.show');
