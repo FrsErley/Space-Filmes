@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Facades\ApiMovies;
 use App\Http\Controllers\array_filmes;
+use App\Models\Movie;
 
 
 class EventController extends Controller
@@ -14,13 +15,16 @@ class EventController extends Controller
 
         $filmes = include 'array_filmes.php';
 
-        return view('welcome',['filmes'=>$filmes]);
+        $movies = Movie::all();
+
+        return view('welcome',['filmes'=>$filmes, 'movie'=>$movies]);
     }
 
-    public function pagemovie() {
+    public function show($id) {
 
+        $movies = Movie::findorFail($id);
 
-        return view('show');
+        return view('show', ['movie' => $movies]);
     }
 
     public function showusers() {

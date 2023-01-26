@@ -1,27 +1,35 @@
 @extends('layout.main')
 
-@section('title', 'titulo do filme')
+@section('title', $movie->title)
 
 @section('content')
 
 <div id="tela-filme" class="container">
-        <div id="paginafilme" >
-            <img src="/img/gatodebotas.jpg" alt="">
+        <div id="paginafilme">
+            <img id="image-movie-show" src="/img/{{ $movie->poster }}" alt="">
                 @auth
-                <div>
-                    <a class="btn btn-success" href="/telafilme">Assistir</a>
+
+                <div id="buttons">
+                    <a id="movie-button" class="btn btn-success" href="/telafilme">Assistir</a>
+                    
+                    <a  class="btn btn-danger"> <ion-icon name="heart-outline"></ion-icon></a>
                 </div>
                 @endauth
                 @guest
-                <div>
-                    <a class="btn btn-primary" href="/login">Faça login</a>
-                </div>
+                
+                    <a id="button-guest" class="btn btn-secondary" href="/register">Crie uma conta</a>
+            
                 @endguest
+                  
         </div>
         <div id="conteudo-filme">
-                <h1>Gato de botas 2: O último pedido</h1>
-                <p>O Gato de Botas descobre que sua paixão pela aventura cobrou seu preço: ele já gastou oito de suas nove vidas. Ele então parte em uma jornada épica para encontrar o mítico Último Desejo e restaurar suas nove vidas.</p>
-                <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/QAcn7cWm_hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <h1>{{ $movie->title }}</h1>
+                <p>{{ $movie->description}}</p>
+
+                <div><iframe width="560" height="315" src="https://www.youtube.com/embed/sLk94T-hS78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                
+                
         </div>
 </div>
 

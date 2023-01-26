@@ -50,9 +50,9 @@
 
     <div class="container">
 
-    @foreach($filmes as $filme)
+    @foreach($movie as $movies)
     
-    <a href="/movie"><img id="image-movie" src="img/{{ $filme->poster }}" alt="Imagem de capa do card"></a>
+    <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
 
     @endforeach
     

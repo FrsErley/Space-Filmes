@@ -73,29 +73,56 @@ h2 {
 
 /* Show */
 
-
-#tela-filme {
-    display: flex;
+#image-movie-show{
+    border-radius: 15px;
+    width: 350px;
+    margin-bottom: 20px;
 }
 
-#tela-filme a{
-   margin-top: 30px;
-   padding: 10px 50px;
 
+#tela-filme {
+
+    display: flex;
+
+}
+
+#movie-button{
+    width: 280px;
+    color: rgb(237, 236, 236);
+    font-size:18px;
+    letter-spacing: 1px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+#button-guest {
+    display: block;
+}
+
+#tela-filme  ion-icon  {
+    font-size: 20px;
+    display: flex;
+    padding: 4px;
 }
 
 #paginafilme {
-    
-    margin-top: 50px;
-    margin-bottom: 50px; 
-    text-align: center;
+    margin: 70px 0;
 }
 
 #conteudo-filme {
-
+    
     color: #FFF;
-    margin-top: 100px;
-    margin-left: 60px;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+#conteudo-filme p {
+    margin-bottom: 60px;
 }
 
 #trailer {
@@ -120,6 +147,7 @@ h2 {
 /* Footer */
 
 footer {
+    clear: both;
     margin-bottom: 20px;
     color: #FFF;
     border-top: 1px solid #fff;
