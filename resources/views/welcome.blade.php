@@ -9,7 +9,7 @@
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/thelastt.jpg" class="img-fluid" alt="">
+            <img src="/img/filmes/thelastt.jpg" class="img-fluid" alt="">
             <div class="carousel-caption">
                 <h1></h1>
             </div>
@@ -35,7 +35,7 @@
     <div class="container">
 
     
-    <a href="/movie"><img id="image-movie" src="img/3197518.jpg" alt="Imagem de capa do card"></a>
+    <a href="/movie"><img id="image-movie" src="img/filmes/3197518.jpg" alt="Imagem de capa do card"></a>
     
    
 </div>
@@ -52,7 +52,7 @@
 
     @foreach($movie as $movies)
     
-    <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
+    <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/filmes/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
 
     @endforeach
     

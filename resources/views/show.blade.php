@@ -6,7 +6,7 @@
 
 <div id="tela-filme" class="container">
         <div id="paginafilme">
-            <img id="image-movie-show" src="/img/{{ $movie->poster }}" alt="">
+            <img id="image-movie-show" src="/img/filmes/{{ $movie->poster }}" alt="">
                 @auth
 
                 <div id="buttons">
