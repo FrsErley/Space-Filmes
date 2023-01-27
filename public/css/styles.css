@@ -5,6 +5,11 @@ body {
 }
 
 header {
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
     background-color: #FFF;
     border-bottom: 1px solid #ccc;
 }
@@ -31,7 +36,7 @@ header {
 
 ion-icon {
     padding: 0;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 /* Corpo */
@@ -59,12 +64,11 @@ h2 {
 /* Carrosel */
 
 #carrosel-controles {
-    margin-top: 50px;
+
     color: #ccc;
 }
 
 #carrosel-controles img {
-    width: 800px;
     margin: auto;
     display: block;
 }
@@ -79,7 +83,7 @@ h2 {
 
 
 #tela-filme {
-
+    margin-top: 80px;
     display: flex;
 
 }

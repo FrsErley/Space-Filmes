@@ -5,11 +5,11 @@
 @section('content')
    
 
-<div id="carrosel-controles" class="container carousel slide" data-ride="carousel">
+<div id="carrosel-controles" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/filmes/thelastt.jpg" class="img-fluid" alt="">
+            <img src="/img/filmes/spacecapa.jpg" class="img-fluid" alt="">
             <div class="carousel-caption">
                 <h1></h1>
             </div>
