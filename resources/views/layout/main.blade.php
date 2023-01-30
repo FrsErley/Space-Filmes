@@ -27,10 +27,12 @@
             <a id="title" href="/"><span class="navbar-brand mb-0 h1">Space Filmes</span></a>
 
             <div class="collapse navbar-collapse" id="navbar">
-                <form class="form-inline mt-2 mt-md-0">
-                    <input style="border-radius: 25px" class="form-control mr-sm-2" type="text" placeholder="Pesquise seu filme.." aria-label="Search">
+
+                <form style="display: flex" class="form-inline mt-2 mt-md-0" action="/" method="GET">
+                    <input style="border-radius: 25px" class="form-control mr-sm-2" type="text" placeholder="Pesquise seu filme.." id="search" name="search" aria-label="Search">
+                    <button  class="btn btn-outline-light my-2 my-sm-0" type="submit" ><ion-icon name="search-circle-outline"></ion-icon></button>
                 </form>
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" style="margin:0 10px">Pesquisar</button>
+                
                 <ul class="navbar-nav justify-content-end">
                     @guest
                     <li class="nav-item">

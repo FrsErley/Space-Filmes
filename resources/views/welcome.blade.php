@@ -25,41 +25,23 @@
 
 </div>
 
-@auth
-
 <div class="container">
 
-    <h2>Minha lista</h2>
+    <div>
+        @if($search)
+        <h2>buscando por: {{ $search }}</h2>
+        @else
+        <h2>Filmes Populares</h2>
+        @endif
+        <div class="container fluid-container">
+        @foreach($movie as $movies)
+            <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/filmes/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
+        @endforeach
+    </div>
 
     
-    <div class="container">
-
-    
-    <a href="/movie"><img id="image-movie" src="img/filmes/3197518.jpg" alt="Imagem de capa do card"></a>
-    
-   
-</div>
-
-</div>
-
-@endauth  
-
-<div class="container">
-
-    <h2>Filmes Populares</h2>
-
-    <div class="container">
-
-    @foreach($movie as $movies)
-    
-    <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/filmes/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
-
-    @endforeach
-    
-</div>
 
 </div>
-
 
 
 

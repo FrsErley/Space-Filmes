@@ -13,11 +13,21 @@ class EventController extends Controller
     
     public function index() {
 
-        $filmes = include 'array_filmes.php';
+        $search = request('search');
 
-        $movies = Movie::all();
+        if($search) {
 
-        return view('welcome',['filmes'=>$filmes, 'movie'=>$movies]);
+            $movies = Movie::where([ 
+                ['title', 'like', '%'.$search.'%']
+                ])->get();
+
+        } else {
+
+            $movies = Movie::all();
+
+        }
+
+        return view('welcome',['movie'=>$movies, 'search' => $search]);
     }
 
     public function show($id) {

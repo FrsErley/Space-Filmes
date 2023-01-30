@@ -59,7 +59,20 @@ h2 {
     
 }
 
+#navbar input {
+    margin-top: 8px;
+    height: 40px;
+    width: 200px;
+}
 
+#navbar button {
+    border: none;
+}
+
+#navbar ion-icon{
+    font-size: 40px;
+    border: none;
+}
 
 /* Carrosel */
 
@@ -136,70 +149,12 @@ h2 {
 
 /* Tela de usuario */
 
-
-
 #acount-area h1 {
     color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-
+    margin-top: 160px;
+    font-size: 40px;
 
 }
-
-#user-area {
-    height: 400px;
-    margin-top: 40px;
-    display: block;
-    text-align: center;
-
-    
-}
-
-#cards-area {
-    display: flex;
-    justify-content: center;
-    padding-top: 60px;
-}
-
-.card {
-    width: 200px;
-    display: block;
-    margin: 0 20px;
-    background-color: #0a0a0b44;
-}
-
-.card-title {
-    text-decoration: none;
-}
-
-
-#cards-area img {
-    margin-top: 14px;
-    border-radius: 65px;
-    width: 120px;
-
-}
-
-.card:hover {
-
-    transform: scale(1.2);
-    transition: transform .5s ease;
-}
-
-#options-area {
-    display: block;
-    margin: 60px auto;
-}
-
-#options-area a {
-    font-size: large;
-    width: 200px;
-    padding: 10px;
-    margin: 0 10px;
-    
-}
-
 
 
 h5 {
