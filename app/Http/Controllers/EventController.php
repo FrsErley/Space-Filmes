@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Facades\ApiMovies;
 use App\Http\Controllers\array_filmes;
 use App\Models\Movie;
-
+use App\Models\User;
 
 class EventController extends Controller
 {
@@ -45,6 +45,13 @@ class EventController extends Controller
     public function telafilme() {
 
         return view('telafilme');
+    }
+
+    public function dashboard() {
+
+        $users = User::all();
+
+        return view('dashboard', ['user'=>$users]);
     }
 
 }

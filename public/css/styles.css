@@ -18,13 +18,14 @@ header {
 /* Barra de navegação */
 
 #navbar {
+    display: flex;
     align-items: center;
     justify-content:end;
 }
 
 .navbar-brand {
-    margin-top: 10px;
-    align-content: center;
+    display: flex;
+    align-items: center;
     font-size: 30px;
 }
 
@@ -67,9 +68,12 @@ h2 {
 
 #navbar button {
     border: none;
+    padding: 3px;
+    margin: 0 5px;
 }
 
 #navbar ion-icon{
+    margin-top: 3px;
     font-size: 40px;
     border: none;
 }
@@ -147,25 +151,31 @@ h2 {
 
 
 
-/* Tela de usuario */
+/* Dashboard */
 
-#acount-area h1 {
+h1 {
     color: white;
     margin-top: 160px;
     font-size: 40px;
-
 }
 
-
-h5 {
-    text-decoration: none;
+.table {
+    color: #FFF;
 }
 
-#acount-area {
+.table tr {
+    color: #FFF;
+}
+
+.dashboard-title-container {
+    margin-bottom: 30px;
     margin-top: 30px;
-    margin-bottom: 100px;
 }
 
+.dashboard-users-container th {
+    width: 25%;
+    color: white;
+}
 
 
 /* Footer */
