@@ -18,14 +18,12 @@ header {
 /* Barra de navegação */
 
 #navbar {
-    display: flex;
-    align-items: center;
+   
     justify-content:end;
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
+
     font-size: 30px;
 }
 
@@ -135,8 +133,8 @@ h2 {
 
 #conteudo-filme {
     
+    margin-top: -100px;
     color: #FFF;
-    margin-top: 80px;
     margin-left: 100px;
 }
 

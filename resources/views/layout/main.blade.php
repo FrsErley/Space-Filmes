@@ -18,15 +18,15 @@
 </head>
 <body>
 
-    <header class="bg-dark">
-        <nav class="navbar bg-dark navbar-expand-lg navbar-dark container">
+    <header class="bg-dark col-md-12">
+        <nav class=" container navbar bg-dark navbar-expand-lg navbar-dark">
 
             <a href="/" class="navbar-brand">
                 <ion-icon class="d-inline-block align-top" name="film-outline"></ion-icon>
             </a>
             <a id="title" href="/"><span class="navbar-brand mb-0 h1">Space Filmes</span></a>
 
-            <div class="collapse navbar-collapse" id="navbar">
+            <div class="collapse navbar-collapse col-md-6" id="navbar">
 
                 <form style="display: flex" class="form-inline mt-2 mt-md-0" action="/" method="GET">
                     <input style="border-radius: 25px" class="form-control mr-sm-2" type="text" placeholder="Pesquise seu filme.." id="search" name="search" aria-label="Search">
