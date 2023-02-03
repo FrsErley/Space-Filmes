@@ -45,7 +45,7 @@
 
                     @auth
                     <li class="nav-item">
-                        <a href="/register" class="nav-link">Minha conta</a>
+                        <a href="/account" class="nav-link">Minha conta</a>
                     </li>
 
                     <li class="nav-item">

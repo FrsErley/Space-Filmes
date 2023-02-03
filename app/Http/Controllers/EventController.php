@@ -51,7 +51,11 @@ class EventController extends Controller
 
         $users = User::all();
 
-        return view('dashboard', ['user'=>$users]);
+        
+
+        $movies = Movie::all();
+
+        return view('dashboard', ['user'=>$users, 'movie'=>$movies]);
     }
 
 }
