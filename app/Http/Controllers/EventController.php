@@ -59,3 +59,10 @@ class EventController extends Controller
     }
 
 }
+
+// if($user->type_user == "admin") {
+//     return  view('dashboard', ['user'=>$users, 'movie'=>$movies]);
+// }
+
+
+// return view('404');
