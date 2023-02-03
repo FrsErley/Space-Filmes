@@ -49,20 +49,19 @@ class EventController extends Controller
 
     public function dashboard() {
 
-        $users = User::all();
+        $user = auth()->user();
 
-        
+        $users = User::all();
 
         $movies = Movie::all();
 
-        return view('dashboard', ['user'=>$users, 'movie'=>$movies]);
+        if($user->user_type == 'administrador') {
+            return view('dashboard', ['users'=>$users, 'movie'=>$movies, 'user'=>$user]);
+        }
+
+        return view('404');
     }
 
 }
 
-// if($user->type_user == "admin") {
-//     return  view('dashboard', ['user'=>$users, 'movie'=>$movies]);
-// }
 
-
-// return view('404');
