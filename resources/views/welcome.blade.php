@@ -17,10 +17,10 @@
     </div>
 
     <a href="#carousel-controles" class="carousel-control-prev" data-slide="prev">
-        <span><ion-icon style="color: #ffff" name="caret-back-outline"></ion-icon></span>
+        <span><ion-icon id="icone-carrosel" style="color: #ffff" name="caret-back-outline"></ion-icon></span>
     </a>
     <a href="#carousel-controles" class="carousel-control-next" data-slide="prev">
-        <span><ion-icon style="color: #ffff" name="caret-forward-outline"></ion-icon></span>
+        <span><ion-icon id="icone-carrosel" style="color: #ffff" name="caret-forward-outline"></ion-icon></span>
     </a>
 
 </div>

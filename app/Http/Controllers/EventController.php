@@ -62,6 +62,27 @@ class EventController extends Controller
         return view('404');
     }
 
+    public function edit($id) {
+
+        $user = auth()->user();
+
+        $users = User::findorFail($id);
+
+        if($user->user_type == 'administrador') {
+            return view('edit', ['user'=>$user, 'users'=>$users]);
+        }
+
+        return view('404');
+
+    }
+
+    public function update(Request $request) {
+
+        User::findorFail($request->id)->update($request->all());
+
+        return redirect('/dashboard')->with('msg', 'Usuário editado com sucesso!');
+    }
+
 }
 
 

@@ -22,7 +22,7 @@
         <nav class=" container navbar bg-dark navbar-expand-lg navbar-dark">
 
             <a href="/" class="navbar-brand">
-                <ion-icon class="d-inline-block align-top" name="film-outline"></ion-icon>
+                <ion-icon id="logo" class="d-inline-block align-top" name="film-outline"></ion-icon>
             </a>
             <a id="title" href="/"><span class="navbar-brand mb-0 h1">Space Filmes</span></a>
 

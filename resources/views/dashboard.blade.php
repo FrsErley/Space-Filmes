@@ -31,7 +31,12 @@
                     <td> {{ $users->name }} </td>
                     <td> {{ $users->email }} </td>
                     <td> {{ $users->user_type}} </td>
-                    <td><a href="#">Tornar premium</a> <a href="#">Bloquear</a></td>
+                    <td id="buttons">
+                        <a href="/edit/{{$users->id}}" class="btn btn-info edit-btn"> <ion-icon id="icon-edit" name="create-outline"></ion-icon>Editar</a> 
+                        <form action="">
+                            <button type="submit" class="btn btn-danger block-btn">Bloquear</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
@@ -63,9 +68,14 @@
                 <tr>
                     <td scope="row">{{ $loop->index + 1 }}</td>
                     <td> {{ $movies->title }} </td>
-                    <td>  </td>
+                    <td> {{ $movies->category}} </td>
                     <td> </td>
-                    <td><a href="#">Editar</a> <a href="#">Remover</a></td>
+                    <td id="buttons">
+                        <a href="/edit/{{$users->id}}" class="btn btn-info edit-btn"> <ion-icon id="icon-edit" name="create-outline"></ion-icon>Editar</a> 
+                        <form action="">
+                            <button type="submit" class="btn btn-danger block-btn">Bloquear</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
