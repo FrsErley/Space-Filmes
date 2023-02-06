@@ -11,6 +11,9 @@
         @csrf
         @method('PUT')
         <div class="form-group">
+            <input type="text" class="form-control" id="image" name="image" placeholder="foto de perfil">
+        </div>
+        <div class="form-group">
             <label for="name">Nome:</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nome do usuário" value="{{$users->name}}">
         </div>
