@@ -29,13 +29,33 @@
 
     <div>
         @if($search)
-        <h2>buscando por: {{ $search }}</h2>
+            <h2>buscando por: {{ $search }}</h2>
         @else
-        <h2>Filmes Populares</h2>
+            <h2>Filmes Populares</h2>
         @endif
-        <div class="container fluid-container">
-        @foreach($movie as $movies)
-            <a href="/movie/{{$movies->id}}"><img id="image-movie" src="img/filmes/{{ $movies->poster }}" alt="Imagem de capa do card"></a>
+            <div class="container fluid-container">
+        @foreach($popularMovie as $movie )
+            @if ($loop->index < 15)
+                <a href="/movie/">
+                    <img id="image-movie" src={{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}} alt="Imagem de capa do card">
+                </a>
+            @endif
+        @endforeach
+    </div>
+
+    <div>
+        @if($search)
+            <h2>buscando por: {{ $search }}</h2>
+        @else
+            <h2>Lançamentos</h2>
+        @endif
+            <div class="container fluid-container">
+        @foreach($upcoming as $movie )
+            @if ($loop->index < 15)
+            <a href="/movie/">
+                <img id="image-movie" src={{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}} alt="Imagem de capa do card">
+            </a>
+            @endif
         @endforeach
     </div>
 

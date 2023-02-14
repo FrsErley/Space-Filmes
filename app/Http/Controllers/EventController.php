@@ -4,14 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Facades\ApiMovies;
-use App\Http\Controllers\array_filmes;
 use App\Models\Movie;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class EventController extends Controller
 {
     
     public function index() {
+
+        $popularMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
+        ->get('https://api.themoviedb.org/3/movie/popular')
+        ->json()['results'];
+
+        $upcoming = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
+        ->get('https://api.themoviedb.org/3/movie/upcoming')
+        ->json()['results'];
+
+        dump($popularMovie);
 
         $search = request('search');
 
@@ -27,7 +37,10 @@ class EventController extends Controller
 
         }
 
-        return view('welcome',['movie'=>$movies, 'search' => $search]);
+        return view('welcome',[ 
+            'search' => $search, 
+            'popularMovie'=>$popularMovie,
+            'upcoming'=>$upcoming]);
     }
 
     public function show($id) {
