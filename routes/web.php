@@ -18,7 +18,8 @@ use App\Http\Controllers\EventController;
 
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/movie/{id}', [EventController::class, 'show']);
+
+Route::get('/movie/{movie}', [EventController::class, 'show']);
 
 Route::get('/telafilme', [EventController::class, 'telafilme'])->middleware('auth');
 

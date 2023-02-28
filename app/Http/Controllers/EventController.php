@@ -13,6 +13,15 @@ class EventController extends Controller
     
     public function index() {
 
+        $search = request('search');
+        if($search) {
+
+            $movie = Movie::where([ 
+                ['title', 'like', '%'.$search.'%']
+                ])->get();
+
+        } else {
+
         $popularMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
         ->get('https://api.themoviedb.org/3/movie/popular')
         ->json()['results'];
@@ -21,19 +30,7 @@ class EventController extends Controller
         ->get('https://api.themoviedb.org/3/movie/upcoming')
         ->json()['results'];
 
-        dump($popularMovie);
-
-        $search = request('search');
-
-        if($search) {
-
-            $movies = Movie::where([ 
-                ['title', 'like', '%'.$search.'%']
-                ])->get();
-
-        } else {
-
-            $movies = Movie::all();
+        // dump($popularMovie);
 
         }
 
@@ -45,9 +42,20 @@ class EventController extends Controller
 
     public function show($id) {
 
-        $movies = Movie::findorFail($id);
+        $movie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
+        ->get('https://api.themoviedb.org/3/movie/' . $id . '?append_to_response=credits,images,videos')
+        ->json();
 
-        return view('show', ['movie' => $movies]);
+        $recommendations = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
+        ->get('https://api.themoviedb.org/3/movie/' . $id . '/recommendations')
+        ->json()['results'];
+        
+        dump($recommendations);
+
+        return view('show', [
+            'movie' => $movie, 
+            'recommendations' => $recommendations
+        ]);
     }
 
     public function showusers() {
