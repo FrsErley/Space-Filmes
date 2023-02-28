@@ -50,7 +50,7 @@ class EventController extends Controller
         ->get('https://api.themoviedb.org/3/movie/' . $id . '/recommendations')
         ->json()['results'];
         
-        dump($recommendations);
+        dump($movie);
 
         return view('show', [
             'movie' => $movie, 

@@ -4,34 +4,38 @@
 
 @section('content')
 
-<div id="tela-filme" class="container">
-        <div id="paginafilme">
-            <img id="image-movie-show" src="{{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}}" alt="">
-                @auth
+<div style="background-image: url('{{'https://image.tmdb.org/t/p/original/' . $movie['backdrop_path']}}')">
+    <div style="background-color:rgba(20, 24, 32, 0.5);">
+        <div id="tela-filme" class="container">
+            <div id="paginafilme">
+                <img id="image-movie-show" src="{{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}}" alt="">
+                    @auth
 
-                <div id="buttons">
-                    <a id="movie-button" class="btn btn-success" href="/telafilme">Assistir</a>
+                    <div id="buttons">
+                        <a id="movie-button" class="btn btn-success" href="/telafilme">Assistir</a>
+                        
+                        <a  class="btn btn-danger"> <ion-icon name="heart-outline"></ion-icon></a>
+                    </div>
+                    @endauth
+                    @guest
                     
-                    <a  class="btn btn-danger"> <ion-icon name="heart-outline"></ion-icon></a>
-                </div>
-                @endauth
-                @guest
+                        <a id="button-guest" class="btn btn-success" href="/register">Crie uma conta</a>
                 
-                    <a id="button-guest" class="btn btn-secondary" href="/register">Crie uma conta</a>
-            
-                @endguest
-                  
+                    @endguest
+                    
+            </div>
+            <div id="conteudo-filme">
+
+                    <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">{{ $movie['title'] }} </h1>
+                    <p style="font-size: 18px">{{ $movie['overview']}}</p>
+
+                    <div style="margin-bottom: 30px; display:inline-block">
+                        <a class="btn btn-primary" style="text-decoration: none; color: rgb(240, 233, 233); font-size:20px; display:flex; align-items:center;" href="https://www.youtube.com/watch?v={{ $movie['videos']['results'][1]['key'] }}"> <ion-icon  style="font-size:30px; color:rgb(253, 247, 247);" name="caret-forward-circle-outline"></ion-icon> Assista ao trailer</a> 
+                    </div>
+                    
+             </div>
         </div>
-        <div id="conteudo-filme">
-
-                <h1>{{ $movie['title'] }} </h1>
-                <p>{{ $movie['overview']}}</p>
-
-                <div> <a href="">Assista ao trailer</a> </div>
-                
-                
-        </div>
-
+    </div>  
 </div>
 
 <div>

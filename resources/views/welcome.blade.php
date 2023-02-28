@@ -36,7 +36,7 @@
             <div class="container fluid-container">
                 @foreach($popularMovie as $movie )
                     @if ($loop->index < 15)
-                        <a href="/movie/{{$movie['id']}}">
+                        <a class="link-movie" href="/movie/{{$movie['id']}}">
                             <img id="image-movie" src={{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}} alt="Imagem de capa do card">
                         </a>
                     @endif
@@ -49,7 +49,7 @@
             <div class="container fluid-container">
                 @foreach($upcoming as $movie )
                     @if ($loop->index < 15)
-                        <a href="/movie/{{$movie['id']}}">
+                        <a class="link-movie" href="/movie/{{$movie['id']}}">
                             <img id="image-movie" src={{"https://image.tmdb.org/t/p/w500". $movie['poster_path']}} alt="Imagem de capa do card">
                         </a>
                     @endif

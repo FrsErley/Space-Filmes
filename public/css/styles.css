@@ -55,7 +55,12 @@ h2 {
     width: 180px;
     margin-left: 20px;
     margin-bottom: 30px;
+
     
+}
+
+.link-movie {
+    text-decoration: none;
 }
 
 #navbar input {
@@ -93,6 +98,13 @@ h2 {
 }
 
 /* Show */
+
+
+
+.background-image{
+    background-color: linear-gradient(to right, rgba(7.84%, 9.80%, 1.00) 150px, rgba(7.84%, 8.63%,0.84%) 100%)
+    rgba(10,23,55,0.5);
+}
 
 #image-movie-show{
     border-radius: 15px;
@@ -172,6 +184,7 @@ h2 {
     align-items: center;
     
     
+    
 }
 
 .recommendations {
@@ -190,9 +203,21 @@ h2 {
 
 }
 
-.opacity-movie:hover {
-    opacity: .4 ;
+.movie-recommend:hover {
+    opacity: .6 ;
+    transition: opacity .4s,;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: transform .3s;
+}
+
+#image-movie:hover {
+    opacity: .7 ;
     transition: opacity .4s;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: transform .3s;
+
 }
 
 .fonte {
