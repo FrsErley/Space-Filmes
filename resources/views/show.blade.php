@@ -67,7 +67,12 @@
                 @if($loop->index < 7)
                     <div style="width: 150px">
                         <a class="opacity-movie" href="/movie/{{$movies['id']}}">
-                            <img class="movie-recommend" src="{{ 'https://image.tmdb.org/t/p/w500/' . $movies['poster_path'] }}" alt="">
+                            @if ($movies['poster_path'])
+                                <img class="movie-recommend" src="{{ 'https://image.tmdb.org/t/p/w500/' . $movies['poster_path'] }}" alt="">
+                                @else
+                                    <img style=" margin-right: 8px; border-radius: 10px" src="https://via.placeholder.com/150x225" alt="poster">
+                                @endif
+                            
                         </a>
                         <div class="mt-3">
                             <a class="fonte" href="/movie/{{$movies['id']}}"> {{ $movies['title']}} </a>
