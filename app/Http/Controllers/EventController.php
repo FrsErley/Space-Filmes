@@ -13,15 +13,6 @@ class EventController extends Controller
     
     public function index() {
 
-        $search = request('search');
-        if($search) {
-
-            $movie = Movie::where([ 
-                ['title', 'like', '%'.$search.'%']
-                ])->get();
-
-        } else {
-
         $popularMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
         ->get('https://api.themoviedb.org/3/movie/popular')
         ->json()['results'];
@@ -32,10 +23,8 @@ class EventController extends Controller
 
         // dump($popularMovie);
 
-        }
-
         return view('welcome',[ 
-            'search' => $search, 
+
             'popularMovie'=>$popularMovie,
             'upcoming'=>$upcoming]);
     }
@@ -50,7 +39,6 @@ class EventController extends Controller
         ->get('https://api.themoviedb.org/3/movie/' . $id . '/recommendations')
         ->json()['results'];
         
-        dump($movie);
 
         return view('show', [
             'movie' => $movie, 

@@ -30,7 +30,11 @@
                     <p style="font-size: 18px">{{ $movie['overview']}}</p>
 
                     <div style="margin-bottom: 30px; display:inline-block">
-                        <a class="btn btn-primary" style="text-decoration: none; color: rgb(240, 233, 233); font-size:20px; display:flex; align-items:center;" href="https://www.youtube.com/watch?v={{ $movie['videos']['results'][1]['key'] }}"> <ion-icon  style="font-size:30px; color:rgb(253, 247, 247);" name="caret-forward-circle-outline"></ion-icon> Assista ao trailer</a> 
+
+                        {{-- fazer um if caso o filme não tenha trailer --}}
+                        @if($movie['videos']['results'])
+                        <a class="btn btn-primary" style="text-decoration: none; color: rgb(240, 233, 233); font-size:20px; display:flex; align-items:center;" href="https://www.youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"> <ion-icon  style="font-size:30px; color:rgb(253, 247, 247);" name="caret-forward-circle-outline"></ion-icon> Assista ao trailer</a>
+                        @endif 
                     </div>
                     
              </div>

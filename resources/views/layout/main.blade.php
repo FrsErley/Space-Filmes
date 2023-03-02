@@ -14,7 +14,7 @@
     <!-- CSS da Aplicação  -->
     <link rel="stylesheet" href="/css/styles.css">
 
-
+    @livewireStyles
 </head>
 <body>
 
@@ -28,10 +28,7 @@
 
             <div class="collapse navbar-collapse col-md-6" id="navbar">
 
-                <form style="display: flex" class="form-inline mt-2 mt-md-0" action="/" method="GET">
-                    <input style="border-radius: 25px" class="form-control mr-sm-2" type="text" placeholder="Pesquise seu filme.." id="search" name="search" aria-label="Search">
-                    <button  class="btn btn-outline-light my-2 my-sm-0" type="submit" ><ion-icon name="search-circle-outline"></ion-icon></button>
-                </form>
+                <livewire:search-dropdown>
                 
                 <ul class="navbar-nav justify-content-end">
                     @guest
@@ -71,5 +68,6 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    @livewireScripts
 </body>
 </html>

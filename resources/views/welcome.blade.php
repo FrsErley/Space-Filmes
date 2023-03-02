@@ -27,10 +27,10 @@
 
 <div class="container">
 
-    @if($search)
+    {{-- @if($search)
         <h2>buscando por: {{ $search }}</h2>
-    @else
-    
+    @else --}}
+
     <div>
         <h2>Filmes Populares</h2>
             <div class="container fluid-container">
@@ -56,7 +56,7 @@
                 @endforeach
             </div>
     </div>
-    @endif
+    {{-- @endif --}}
 
     
 
