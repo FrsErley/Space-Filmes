@@ -96,6 +96,10 @@ h2 {
     font-size: small;
     background: #302b2bf2 ;
 }
+
+.search-click:hover { 
+    background: rgb(72, 69, 69);
+}
 /* Carrosel */
 
 #carrosel-controles {

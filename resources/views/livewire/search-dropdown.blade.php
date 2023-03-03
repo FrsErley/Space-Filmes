@@ -13,17 +13,18 @@
 
                 <ul class="lista-filmes" style="list-style-type:none; border-radius: 8px">
                     @foreach ($searchResults as $result)
-                        <li class="border-bottom p-3" style="width: 250px">
+                        
                             <a style="text-decoration:none; color: white" href="/movie/{{$result['id']}}">  
+                                <li class=" search-click border-bottom p-3">
                                 @if ($result['poster_path'])
                                     <img style="width: 40px; margin-right: 8px" src="https://image.tmdb.org/t/p/w92/{{ $result['poster_path'] }}" alt="poster">
                                 @else
-                                <img style="width: 40px; margin-right: 8px" src="https://via.placeholder.com/50x70" alt="poster">
+                                <img style="width: 40px; margin-right: 8px; display: inline" src="https://via.placeholder.com/50x70" alt="poster">
                                 @endif
                                 <span> {{$result['title']}} </span>
-                                
+                                </li>
                             </a>
-                        </li>
+                        
                     @endforeach
                 </ul>
             
