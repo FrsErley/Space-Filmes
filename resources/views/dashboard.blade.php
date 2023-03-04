@@ -63,25 +63,7 @@
                 <th scope="col">Ações</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($movie as $movies)
-                <tr>
-                    <td scope="row">{{ $loop->index + 1 }}</td>
-                    <td> {{ $movies->title }} </td>
-                    <td> {{ $movies->category}} </td>
-                    <td> </td>
-                    <td id="buttons">
-                        <a href="/edit/{{$users->id}}" class="btn btn-info edit-btn"> <ion-icon id="icon-edit" name="create-outline"></ion-icon>Editar</a> 
-                        <form action="">
-                            <button type="submit" class="btn btn-danger block-btn">Bloquear</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-
+        
 </div>
 
 
