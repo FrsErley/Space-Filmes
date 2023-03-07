@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div style="background-image: url('{{'https://image.tmdb.org/t/p/original/' . $movie['backdrop_path']}}')">
+<div class="background-image" style="background-image: url('{{'https://image.tmdb.org/t/p/original/' . $movie['backdrop_path']}}')">
     <div style="background-color:rgba(20, 24, 32, 0.5);">
         <div id="tela-filme" class="container">
             <div id="paginafilme">
@@ -12,14 +12,14 @@
                     @auth
 
                     <div id="buttons">
-                        <a id="movie-button" class="btn btn-success" href="/telafilme">Assistir</a>
+                        <a id="movie-button" class="btn btn-success border border-light" href="/telafilme">Assistir</a>
                         
                         <a  class="btn btn-danger"> <ion-icon name="heart-outline"></ion-icon></a>
                     </div>
                     @endauth
                     @guest
                     
-                        <a id="button-guest" class="btn btn-success" href="/register">Crie uma conta</a>
+                        <a id="button-guest" class="btn btn-success border border-dark" href="/register">Crie uma conta</a>
                 
                     @endguest
                     
@@ -33,7 +33,7 @@
 
                         {{-- fazer um if caso o filme não tenha trailer --}}
                         @if($movie['videos']['results'])
-                        <a class="btn btn-primary" style="text-decoration: none; color: rgb(240, 233, 233); font-size:20px; display:flex; align-items:center;" href="https://www.youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"> <ion-icon  style="font-size:30px; color:rgb(253, 247, 247);" name="caret-forward-circle-outline"></ion-icon> Assista ao trailer</a>
+                        <a class="btn btn-primary border border-light" style="text-decoration: none; color: rgb(240, 233, 233); font-size:20px; display:flex; align-items:center;" href="https://www.youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"> <ion-icon  style="font-size:30px; color:rgb(253, 247, 247);" name="caret-forward-circle-outline"></ion-icon> Assista ao trailer</a>
                         @endif 
                     </div>
                     

@@ -9,7 +9,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    position: absolute;
+    position: relative;
     background-color: #FFF;
     border-bottom: 1px solid #ccc;
 }
@@ -40,6 +40,10 @@ header {
 
 /* Corpo */
 
+.dropdown-item:hover{
+    background-color: rgba(54, 52, 52, 0.606);
+}
+
 h2 {
     margin-top: 60px;
     margin-bottom: 30px;
@@ -61,6 +65,7 @@ h2 {
 
 .link-movie {
     text-decoration: none;
+    width: 20px;
 }
 
 #navbar input {
@@ -102,6 +107,20 @@ h2 {
 }
 /* Carrosel */
 
+.carousel-inner {
+    display: block;
+    text-align: center;
+    height: 100%;
+    margin: auto;
+}
+
+.carousel-inner img {
+    
+    background-position-y: center !important;
+    height: 95%;
+    width: 100%;
+}
+
 #carrosel-controles {
 
     color: #ccc;
@@ -121,12 +140,15 @@ h2 {
 
 
 .background-image{
-    background-color: linear-gradient(to right, rgba(7.84%, 9.80%, 1.00) 150px, rgba(7.84%, 8.63%,0.84%) 100%)
-    rgba(10,23,55,0.5);
+    margin-top: -80px;
+    background-position: center;
+    background-size: cover;
+
 }
 
 #image-movie-show{
     border-radius: 15px;
+    border: 2px solid rgb(13, 5, 5);
     width: 350px;
     margin-bottom: 20px;
 }
