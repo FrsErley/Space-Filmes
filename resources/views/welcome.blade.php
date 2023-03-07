@@ -49,10 +49,10 @@
         </div>
       </div>
 
-    {{-- @if($filter) --}}
+    
 
 
-    {{-- @else --}}
+   
 
     <div>
         <h2>Filmes Populares</h2>
@@ -93,8 +93,6 @@
             </div>
     </div>
 
-
-    {{-- @endif --}}
 
     
 

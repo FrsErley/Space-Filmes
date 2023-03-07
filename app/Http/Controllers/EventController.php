@@ -23,14 +23,7 @@ class EventController extends Controller
 
         $animation = Http::get('https://api.themoviedb.org/3/discover/movie?api_key=11ad839be2673a76e84bed8a1e9c62e4&with_genres=16')
         ->json()['results'];
-
-
-        // $category = Http::get('https://api.themoviedb.org/3/discover/movie?api_key=11ad839be2673a76e84bed8a1e9c62e4&with_genres=' .$gender)
-        // ->json()['results'];
-
-        dump($animation);
-
-        // dump($popularMovie);
+        
 
         return view('welcome',[ 
 
