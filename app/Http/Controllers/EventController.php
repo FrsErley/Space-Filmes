@@ -26,7 +26,7 @@ class EventController extends Controller
         
 
         return view('welcome',[ 
-
+            'genres'=>$this->genreMovies(),
             'popularMovie'=>$popularMovie,
             'upcoming'=>$upcoming,
             'animation'=>$animation]);
@@ -60,6 +60,17 @@ class EventController extends Controller
     
         $movies = $response->json()['results'];
     
+        $selectedGenre = $this->genreMovies($genreId);
+    
+        return view('genre', [
+            'movies' =>  $movies,
+            'selectedGenre' => $selectedGenre
+        ]);
+    }
+
+
+    private function genreMovies($genreId=null) {
+
         $genreMovies = [
             '28' => 'Ação',
             '12' => 'Aventura',
@@ -81,17 +92,17 @@ class EventController extends Controller
             '10752' => 'Guerra',
             '37' => 'Faroeste'
         ];
-    
+
+        if(!$genreId) {
+            return $genreMovies;
+        }
+
         if (!isset($genreMovies[$genreId])) {
             abort(404, 'Gênero não encontrado');
         }
-    
-        $selectedGenre = $genreMovies[$genreId];
-    
-        return view('genre', [
-            'movies' =>  $movies,
-            'selectedGenre' => $selectedGenre
-        ]);
+
+        return $genreMovies[$genreId];
+
     }
 
     public function showusers() {

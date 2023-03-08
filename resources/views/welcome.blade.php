@@ -41,16 +41,17 @@
           Gêneros
         </button>
         <div class="dropdown-menu bg-dark">
-          <a class="dropdown-item text-white" href="/genre/28">Ação</a>
-          <a class="dropdown-item text-white" href="/genre/12">Aventura</a>
-          <a class="dropdown-item text-white" href="/genre/35">Comédia</a>
-          <a class="dropdown-item text-white" href="/genre/18">Drama</a>
-          <a class="dropdown-item text-white" href="/genre/16">Animação</a>
+            @foreach($genres as $id => $genre)
+                <a class="dropdown-item text-white" href="/genre/{{$id}}"> {{$genre}} </a>
+            @endforeach
         </div>
-      </div>
+    </div>
 
     
-
+{{-- filmes premium serão filmes lançados nos ultimos 5 meses
+     No poster no canto direito deve ter uma estrela amarela se o filme for de hoje para 5 meses 
+     atras serão premiums, se lançou de 6 meses para tras serão filmes free se for premium pode ver 
+     o filme todo, se for comum aparecerá um anuncio para ser premium --}}
 
    
 

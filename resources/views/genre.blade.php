@@ -16,7 +16,10 @@
           <a class="dropdown-item text-white" href="/genre/12">Aventura</a>
           <a class="dropdown-item text-white" href="/genre/35">Comédia</a>
           <a class="dropdown-item text-white" href="/genre/18">Drama</a>
-          <a class="dropdown-item text-white" href="/genre/16">Animação</a>
+          <a class="dropdown-item text-white" href="/genre/16">Romance</a>
+          <a class="dropdown-item text-white" href="/genre/27">Terror</a>
+          <a class="dropdown-item text-white" href="/genre/10402">Musica</a>
+          <a class="dropdown-item text-white" href="/genre/9648">Mistério</a>
         </div>
       </div>
 
