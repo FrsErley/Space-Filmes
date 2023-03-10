@@ -12,14 +12,9 @@
           Gêneros
         </button>
         <div class="dropdown-menu bg-dark">
-          <a class="dropdown-item text-white" href="/genre/28">Ação</a>
-          <a class="dropdown-item text-white" href="/genre/12">Aventura</a>
-          <a class="dropdown-item text-white" href="/genre/35">Comédia</a>
-          <a class="dropdown-item text-white" href="/genre/18">Drama</a>
-          <a class="dropdown-item text-white" href="/genre/16">Romance</a>
-          <a class="dropdown-item text-white" href="/genre/27">Terror</a>
-          <a class="dropdown-item text-white" href="/genre/10402">Musica</a>
-          <a class="dropdown-item text-white" href="/genre/9648">Mistério</a>
+          @foreach($genres as $id => $genre)
+                <a class="dropdown-item text-white" href="/genre/{{$id}}"> {{$genre}} </a>
+          @endforeach
         </div>
       </div>
 

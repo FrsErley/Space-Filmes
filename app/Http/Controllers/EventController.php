@@ -13,15 +13,17 @@ class EventController extends Controller
     
     public function index() {
 
-        $popularMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
-        ->get('https://api.themoviedb.org/3/movie/popular')
+        // criar codigo de BaseURL e token para evitar repetição de codigos.
+
+        $popularMovie = Http::withToken(config('services.tmdb.api'))
+        ->get(config('services.tmdb.baseURL').'movie/popular')
         ->json()['results'];
 
-        $upcoming = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
-        ->get('https://api.themoviedb.org/3/movie/upcoming')
+        $upcoming = Http::withToken(config('services.tmdb.api'))
+        ->get(config('services.tmdb.baseURL').'movie/upcoming')
         ->json()['results'];
 
-        $animation = Http::get('https://api.themoviedb.org/3/discover/movie?api_key=11ad839be2673a76e84bed8a1e9c62e4&with_genres=16')
+        $animation = Http::get(config('services.tmdb.baseURL').'discover/movie?api_key='.config('services.tmdb.api_key').'&with_genres=16')
         ->json()['results'];
         
 
@@ -34,12 +36,12 @@ class EventController extends Controller
 
     public function show($id) {
 
-        $movie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
-        ->get('https://api.themoviedb.org/3/movie/' . $id . '?append_to_response=credits,images,videos')
+        $movie = Http::withToken(config('services.tmdb.api'))
+        ->get(config('services.tmdb.baseURL').'movie/'. $id . '?append_to_response=credits,images,videos')
         ->json();
 
-        $recommendations = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
-        ->get('https://api.themoviedb.org/3/movie/' . $id . '/recommendations')
+        $recommendations = Http::withToken(config('services.tmdb.api'))
+        ->get(config('services.tmdb.baseURL'). 'movie/' . $id . '/recommendations')
         ->json()['results'];
         
 
@@ -51,8 +53,8 @@ class EventController extends Controller
 
     public function genreMovie($genreId) {
       
-        $response = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMWFkODM5YmUyNjczYTc2ZTg0YmVkOGExZTljNjJlNCIsInN1YiI6IjYzY2ViZWMwMzM2ZTAxMDBiZWNjNGRmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c6PoptWpYmHFJBJkBlx7tAM_xVePrJAVubEwYF07gm4')
-            ->get('https://api.themoviedb.org/3/discover/movie?api_key=11ad839be2673a76e84bed8a1e9c62e4&with_genres='.$genreId);
+        $response = Http::withToken(config('services.tmdb.api'))
+            ->get(config('services.tmdb.baseURL').'discover/movie?api_key='.config('services.tmdb.api_key'). '&with_genres='.$genreId);
     
         if (!$response->ok()) {
             abort(500, 'Erro na API');
@@ -63,6 +65,7 @@ class EventController extends Controller
         $selectedGenre = $this->genreMovies($genreId);
     
         return view('genre', [
+            'genres'=>$this->genreMovies(),
             'movies' =>  $movies,
             'selectedGenre' => $selectedGenre
         ]);
