@@ -7,6 +7,7 @@ use Illuminate\Facades\ApiMovies;
 use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -124,10 +125,8 @@ class EventController extends Controller
 
         $users = User::all();
 
-        $movies = Movie::all();
-
         if($user->user_type == 'administrador') {
-            return view('dashboard', ['users'=>$users, 'movie'=>$movies, 'user'=>$user]);
+            return view('dashboard', ['users'=>$users, 'user'=>$user]);
         }
 
         return view('404');
@@ -150,8 +149,18 @@ class EventController extends Controller
     public function update(Request $request) {
 
         User::findorFail($request->id)->update($request->all());
+    
+        
 
         return redirect('/dashboard')->with('msg', 'Usuário editado com sucesso!');
+    }
+
+    public function destroy($id) {
+
+        User::findorFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Usuário deletado com sucesso!');
+
     }
 
 }

@@ -29,5 +29,6 @@ Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('aut
   
 Route::get('/edit/{id}', [EventController::class, 'edit'])->middleware('auth');
 Route::put('/update/{id}', [EventController::class,'update'])->middleware('auth');
+Route::delete('edit/{id}', [EventController::class, 'destroy']);
 
 

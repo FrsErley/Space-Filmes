@@ -8,7 +8,7 @@
 
     <h1>Tela de Administrador</h1>
 
-    <h2>Usuários</h2>
+    <h2> Gerenciamento de Usuários</h2>
 
 </div>
 
@@ -33,8 +33,11 @@
                     <td> {{ $users->user_type}} </td>
                     <td id="buttons">
                         <a href="/edit/{{$users->id}}" class="btn btn-info edit-btn"> <ion-icon id="icon-edit" name="create-outline"></ion-icon>Editar</a> 
-                        <form action="">
-                            <button type="submit" class="btn btn-danger block-btn">Bloquear</button>
+                        <form action="/edit/{{$users->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <a href=""></a>
+                            <button type="submit" class="btn btn-danger block-btn"> Deletar</button>
                         </form>
                     </td>
                 </tr>
@@ -43,27 +46,6 @@
     </table>
 
 
-</div>
-
-<div class="col-md-10 offset-md-1 dashboard-title-container">
-
-    <h2>Filmes</h2>
-
-</div>
-
-<div class="col-md-10 offset-md-1 dashboard-acounts-container">
-    
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Categoria</th>
-                <th scope="col"></th>
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        
 </div>
 
 

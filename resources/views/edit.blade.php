@@ -21,14 +21,14 @@
             <label for="name">Email:</label>
             <input type="text" class="form-control" id="email" name="email" placeholder="Email do usuário" value="{{$users->email}}">
         </div>
-        {{-- <div class="form-group">
-            <label for="name">Tipo Usuário:</label>
+        <div class="form-group">
+            <label for="name" name="user-type">Tipo Usuário:</label>
             <select name="user-type" id="user-type" class="form-control">
-                <option value="administrado">Administrador</option>
-                <option value="Premium">Premium</option>
-                <option value="Comum">Comum</option>
+                <option value="administrador" {{$users->user_type=="administrador" ? 'selected' : ''}}>administrador</option> 
+                <option value="premium" {{$users->user_type=="premium" ? 'selected' : ''}}>premium</option>
+                <option value="free" {{$users->user_type=="free" ? 'selected' : ''}}>free</option>
             </select>
-        </div> --}}
+        </div>
         <input type="submit" class="btn btn-primary mb-5" value="Editar Usuário">
     </form>
 </div>

@@ -51,7 +51,7 @@
 {{-- filmes premium serão filmes lançados nos ultimos 5 meses
      No poster no canto direito deve ter uma estrela amarela se o filme for de hoje para 5 meses 
      atras serão premiums, se lançou de 6 meses para tras serão filmes free se for premium pode ver 
-     o filme todo, se for comum aparecerá um anuncio para ser premium --}}
+     o filme todo, se for free aparecerá um anuncio para ser premium --}}
 
    
 
