@@ -148,9 +148,9 @@ class EventController extends Controller
 
     public function update(Request $request) {
 
+
         User::findorFail($request->id)->update($request->all());
     
-        
 
         return redirect('/dashboard')->with('msg', 'Usuário editado com sucesso!');
     }

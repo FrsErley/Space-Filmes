@@ -24,9 +24,10 @@
         <div class="form-group">
             <label for="name" name="user-type">Tipo Usuário:</label>
             <select name="user-type" id="user-type" class="form-control">
-                <option value="administrador" {{$users->user_type=="administrador" ? 'selected' : ''}}>administrador</option> 
-                <option value="premium" {{$users->user_type=="premium" ? 'selected' : ''}}>premium</option>
-                <option value="free" {{$users->user_type=="free" ? 'selected' : ''}}>free</option>
+                {{-- fazer em boolean --}}
+                <option value="administrador" name="administrador" {{$users->user_type=="administrador" ? 'selected' : ''}}>administrador</option> 
+                <option value="premium" name="premium" {{$users->user_type=="premium" ? 'selected' : ''}}>premium</option>
+                <option value="free" name="free" {{$users->user_type=="free" ? 'selected' : ''}}>free</option>
             </select>
         </div>
         <input type="submit" class="btn btn-primary mb-5" value="Editar Usuário">
